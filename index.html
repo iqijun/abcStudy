@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC快乐学习 - 儿童英语字母</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部导航 -->
+        <header class="header">
+            <h1 class="title">🌟 ABC快乐学习 🌟</h1>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+                <span class="progress-text" id="progressText">0/26</span>
+            </div>
+            <div class="stars-container" id="starsContainer">
+                <span class="star-count" id="starCount">⭐ 0</span>
+            </div>
+        </header>
+
+        <!-- 主要内容区域 -->
+        <main class="main-content">
+            <!-- 字母网格 -->
+            <section class="alphabet-grid" id="alphabetGrid">
+                <!-- 字母卡片将通过JavaScript动态生成 -->
+            </section>
+
+            <!-- 字母详情页面 -->
+            <section class="letter-detail" id="letterDetail" style="display: none;">
+                <button class="back-btn" id="backBtn">← 返回</button>
+                <div class="letter-card">
+                    <div class="letter-display">
+                        <span class="big-letter" id="bigLetter">A</span>
+                        <button class="play-btn" id="letterPlayBtn">🔊</button>
+                    </div>
+                    <div class="words-section">
+                        <h3>学习单词</h3>
+                        <div class="words-grid" id="wordsGrid">
+                            <!-- 单词卡片将动态生成 -->
+                        </div>
+                    </div>
+                    <button class="complete-btn" id="completeBtn">完成学习 ✨</button>
+                </div>
+            </section>
+
+            <!-- 游戏模块 -->
+            <section class="games-section" id="gamesSection" style="display: none;">
+                <button class="back-btn" id="gameBackBtn">← 返回</button>
+                <div class="games-menu">
+                    <h2>🎮 趣味游戏</h2>
+                    <div class="game-buttons">
+                        <button class="game-btn" data-game="puzzle">🧩 字母拼图</button>
+                        <button class="game-btn" data-game="balloon">🎈 字母气球</button>
+                        <button class="game-btn" data-game="match">🔗 字母配对</button>
+                    </div>
+                </div>
+                
+                <!-- 拼图游戏 -->
+                <div class="game-container" id="puzzleGame" style="display: none;">
+                    <h3>🧩 字母拼图</h3>
+                    <div class="puzzle-area">
+                        <div class="puzzle-target" id="puzzleTarget"></div>
+                        <div class="puzzle-pieces" id="puzzlePieces"></div>
+                    </div>
+                </div>
+
+                <!-- 气球游戏 -->
+                <div class="game-container" id="balloonGame" style="display: none;">
+                    <h3>🎈 点击字母气球</h3>
+                    <div class="target-letter">找到字母: <span id="targetLetter">A</span></div>
+                    <div class="balloons-area" id="balloonsArea"></div>
+                </div>
+
+                <!-- 配对游戏 -->
+                <div class="game-container" id="matchGame" style="display: none;">
+                    <h3>🔗 字母与图片配对</h3>
+                    <div class="match-area">
+                        <div class="letters-column" id="lettersColumn"></div>
+                        <div class="images-column" id="imagesColumn"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- 底部导航 -->
+        <nav class="bottom-nav">
+            <button class="nav-btn active" data-section="alphabet">
+                <span class="nav-icon">🔤</span>
+                <span class="nav-text">字母</span>
+            </button>
+            <button class="nav-btn" data-section="games">
+                <span class="nav-icon">🎮</span>
+                <span class="nav-text">游戏</span>
+            </button>
+        </nav>
+
+        <!-- 音频元素 -->
+        <audio id="audioPlayer" preload="none"></audio>
+        
+        <!-- 成功提示 -->
+        <div class="success-popup" id="successPopup">
+            <div class="popup-content">
+                <div class="popup-icon">🎉</div>
+                <div class="popup-text">太棒了！</div>
+                <div class="popup-stars">⭐⭐⭐</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
